@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Amount
+<input type="text" id="ID">
+From Currency
+<select id="ID1">
+    <option value="vnd">VND</option>
+    <option value="usd">USD</option>
+</select>
+To Currency
+<select id="ID2">
+    <option value="vnd">VND</option>
+    <option value="usd">USD</option>
+</select>
+<input type="button" onclick="check()" value="Convert">
+<p id="ID3"></p>
+<script>
+    function check() {
+        let amount = parseFloat(document.getElementById("ID").value);
+        let from = document.getElementById("ID1").value;
+        let to = document.getElementById("ID2").value;
+        if (from == "usd" && to == "vnd") {
+            let kq = amount * 23000;
+            document.getElementById("ID3").innerHTML = kq;
+        }
+        if (from == "vnd" && to == "usd") {
+            let kq = amount / 23000;
+            document.getElementById("ID3").innerHTML = kq;
+        }
+        if (from == to){
+            let kq = amount;
+            document.getElementById("ID3").innerHTML = kq;
+        }
+    }
+</script>
+</body>
+</html>
